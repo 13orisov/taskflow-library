@@ -18,3 +18,11 @@ Default value: 'medium'. The list of valid values is available as `Task.PRIORITI
 Adds a label to the task. Empty and duplicate labels are ignored.
 A task can have at most 5 labels (`Task.MAX_LABELS`).
 Returns: boolean - true if label was added
+
+## Board Methods
+
+### addTask(task)
+Adds a task. Returns `true`, or `false` if `task` is not a `Task` instance.
+
+### getTasks([status])
+Returns a copy of the tasks array. With `status` - only tasks with that status; unknown status returns `[]`.

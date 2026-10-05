@@ -1,4 +1,6 @@
 // Task management module
+const MAX_LABELS = 5;
+
 class Task {
     constructor(title, description) {
         this.id = Date.now();
@@ -16,11 +18,20 @@ class Task {
         }
     }
 
+    /**
+     * Add a label to the task.
+     * @param {string} label - Label name
+     * @returns {boolean} true if label was added
+     */
     addLabel(label) {
-        if (label && !this.labels.includes(label)) {
-            this.labels.push(label);
+        if (!label || this.labels.includes(label) || this.labels.length >= MAX_LABELS) {
+            return false;
         }
+        this.labels.push(label);
+        return true;
     }
 }
+
+Task.MAX_LABELS = MAX_LABELS;
 
 module.exports = Task;

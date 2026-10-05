@@ -1,5 +1,6 @@
 // Task management module
 const PRIORITIES = ['low', 'medium', 'high', 'urgent'];
+const MAX_LABELS = 5;
 
 class Task {
     /**
@@ -14,6 +15,7 @@ class Task {
         this.status = 'todo';
         this.createdAt = new Date();
         this.priority = 'medium';
+        this.labels = [];
     }
 
     /**
@@ -39,8 +41,22 @@ class Task {
         }
         return false;
     }
+
+    /**
+     * Add a label to the task.
+     * @param {string} label - Label name
+     * @returns {boolean} true if label was added
+     */
+    addLabel(label) {
+        if (!label || this.labels.includes(label) || this.labels.length >= MAX_LABELS) {
+            return false;
+        }
+        this.labels.push(label);
+        return true;
+    }
 }
 
 Task.PRIORITIES = PRIORITIES;
+Task.MAX_LABELS = MAX_LABELS;
 
 module.exports = Task;

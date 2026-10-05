@@ -6,6 +6,7 @@ Format: Keep a Changelog. Versioning: Semantic Versioning.
 ## [Unreleased]
 ### Added
 - Task priority support with setPriority() method
+- Task labels with addLabel() method (max 5 labels per task)
 
 ## [1.2.0] - 2026-10-05
 ### Added

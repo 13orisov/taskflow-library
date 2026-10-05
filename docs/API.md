@@ -9,6 +9,11 @@
 ### updateStatus(status)
 Changes task status. Valid values: 'todo', 'in-progress', 'done'
 
+### setPriority(priority)
+Sets task priority. Valid values: 'low', 'medium', 'high', 'urgent'
+Returns: boolean - true if priority was set
+Default value: 'medium'. The list of valid values is available as `Task.PRIORITIES`.
+
 ### addLabel(label)
 Adds a label to the task. Empty and duplicate labels are ignored.
 A task can have at most 5 labels (`Task.MAX_LABELS`).
